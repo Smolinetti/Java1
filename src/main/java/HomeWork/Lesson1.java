@@ -40,7 +40,7 @@ public class Lesson1 {
 
     private static void compareNumbers() {
         int a = 25, b = 45;
-        if (a>=b) {
+        if (a >= b) {
             System.out.println("a >= b");
         } else {
             System.out.println("a < b");
@@ -54,7 +54,6 @@ public class Lesson1 {
         System.out.println(" -----");
 
     }
-
 
 
 }
