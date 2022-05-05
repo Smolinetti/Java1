@@ -11,6 +11,7 @@ public class Lesson3 {
         arraysFor();
         doubleArrays();
         arraysPrintDouble();
+        arrLenght();
 
 
     }
@@ -67,6 +68,15 @@ public class Lesson3 {
             }
         }
         System.out.println(Arrays.deepToString(arr));
+        System.out.println();
+    }
+
+    private static void arrLenght() {
+        int[] arr = {1,2,3,4,5};
+        System.out.println("Длина массива: " + arr.length);
+        for (int i = 0; i < arr.length; i++) {
+            System.out.print(" " + i + "-" + arr[i] + "; ");
+        }
         System.out.println();
     }
 
