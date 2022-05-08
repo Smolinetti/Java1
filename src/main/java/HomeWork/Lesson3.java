@@ -1,8 +1,12 @@
 package HomeWork;
 
 import java.util.Arrays;
+import java.util.Scanner;
 
 public class Lesson3 {
+
+    public static Scanner sc = new Scanner(System.in);
+
     public static void main(String[] args) {
         final int SEASON_NUMBER = 3;
 
@@ -12,6 +16,8 @@ public class Lesson3 {
         doubleArrays();
         arraysPrintDouble();
         arrLenght();
+//        scanerExample();
+        getScaner();
 
 
     }
@@ -72,12 +78,37 @@ public class Lesson3 {
     }
 
     private static void arrLenght() {
-        int[] arr = {1,2,3,4,5};
+        int[] arr = {1, 2, 3, 4, 5};
         System.out.println("Длина массива: " + arr.length);
         for (int i = 0; i < arr.length; i++) {
-            System.out.print(" " + i + "-" + arr[i] + "; ");
+            System.out.print(" " + i + "-" + arr[i] + "; \n");
         }
         System.out.println();
     }
+
+    private static void scanerExample() {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Введите число:");
+        int a = sc.nextInt();
+        int b = a * a;
+        System.out.printf("Введенное число %s во 2ой степени равно: %s", a, b);
+        sc.close();
+    }
+
+    private static void getScaner() {
+        int d = getNumberFromScanner("Введите число в пределах от 5 до 10", 5 , 10);
+        System.out.println("d = " + d);
+
+    }
+    public static int getNumberFromScanner(String message, int min, int max) {
+        int x;
+        do {
+            System.out.println(message);
+            x = sc.nextInt();
+        } while (x < min || x > max);
+        return x;
+    }
+
+
 
 }
