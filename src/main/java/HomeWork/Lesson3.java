@@ -191,6 +191,7 @@ public class Lesson3 {
             if (num < Math.max(num, num)) {
                 System.out.println(num);
 
+
             }
         }
     }
