@@ -26,6 +26,7 @@ public class Lesson3 {
         arraysDoubleDiagonal();
 //        inputArray();
         arraysRandom();
+        summBoolean();
 
 
     }
@@ -104,7 +105,7 @@ public class Lesson3 {
     }
 
     private static void getScaner() {
-        int d = getNumberFromScanner("Введите число в пределах от 5 до 10", 5 , 10);
+        int d = getNumberFromScanner("Введите число в пределах от 5 до 10", 5, 10);
         System.out.println("d = " + d);
 
     }
@@ -119,7 +120,7 @@ public class Lesson3 {
     }
 
     private static void arrChange() {
-        int[] arr = {1, 1, 0, 0, 1, 0, 1, 1, 0, 0 };
+        int[] arr = {1, 1, 0, 0, 1, 0, 1, 1, 0, 0};
         for (int i = 0; i < arr.length; i++) {
             if (arr[i] == 1) {
                 arr[i] = 0;
@@ -132,7 +133,7 @@ public class Lesson3 {
 
 
     private static void arraysFill() {
-        int [] arr = new int[100];
+        int[] arr = new int[100];
         for (int i = 0; i < arr.length; i++) {
             arr[i] = i + 1;
         }
@@ -150,7 +151,7 @@ public class Lesson3 {
     }
 
     private static void arraysDoubleDiagonal() {
-        int arr [][] = new int[7][7];
+        int arr[][] = new int[7][7];
         for (int i = 0; i < arr.length; i++) {
             for (int j = 0; j < arr.length; j++) {
                 if (i == j || (i + j == arr.length - 1)) {
@@ -169,7 +170,7 @@ public class Lesson3 {
         System.out.print("Введите значение для всех ячеек: ");
         int arrWord = sc.nextInt();
 
-        int[] arr = new int [arrLength];
+        int[] arr = new int[arrLength];
         for (int i = 0; i < arrLength; i++) {
             arr[i] = arrWord;
         }
@@ -178,27 +179,48 @@ public class Lesson3 {
     }
 
     private static void arraysRandom() {
-        final int FIX_LEGTH = 15;
         Random random = new Random();
+        final int FIX_LEGTH = random.nextInt(10, 26);
 
-        int[] arr = new int [FIX_LEGTH];
+
+        int[] arr = new int[FIX_LEGTH];
         for (int i = 0; i < FIX_LEGTH; i++) {
-            arr[i] = random.nextInt(0, 16);
+            arr[i] = random.nextInt(-100, 101);
+        }
+        System.out.println(Arrays.toString(arr));
+        System.out.println("Массив состоит из " + FIX_LEGTH + " ячеек.");
+        int min = arr[0];
+        for (int i = 0; i < FIX_LEGTH; i++) {
+            if (arr[i] < min) {
+                min = arr[i];
+            }
+        }
+        System.out.println("Минимальное число из массива равно: " + min);
+
+        int max = arr[0];
+        for (int i = 0; i < FIX_LEGTH; i++) {
+            if (arr[i] > max) {
+                max = arr[i];
+            }
+        }
+        System.out.println("Максимальное число из массива равно: " + max);
+        System.out.println();
+    }
+
+    private static void summBoolean() {
+        Random random = new Random();
+        final int FIX_LEGTH = random.nextInt(6, 8);
+        int[] arr = new int[FIX_LEGTH];
+        for (int i = 0; i < FIX_LEGTH; i++) {
+            arr[i] = random.nextInt(1, 3);
         }
         System.out.println(Arrays.toString(arr));
 
-        for (int num : arr) {
-            if (num < Math.max(num, num)) {
-                System.out.println(num);
+        int i = 0, j = 0;
 
 
-            }
-        }
+
+
     }
-
-
-
-
-
 
 }
