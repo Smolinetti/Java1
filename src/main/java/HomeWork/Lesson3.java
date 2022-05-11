@@ -26,7 +26,10 @@ public class Lesson3 {
         arraysDoubleDiagonal();
 //        inputArray();
         arraysRandom();
-        summBoolean();
+        sumBoolean();
+        checkBalanceTrue(new int[] {1, 2, 3, 5, 1});
+        checkBalanceTrue(new int[] {6, 5, 4, 6, 10});
+
 
 
     }
@@ -207,7 +210,7 @@ public class Lesson3 {
         System.out.println();
     }
 
-    private static void summBoolean() {
+    private static void sumBoolean() {
         Random random = new Random();
         final int FIX_LEGTH = random.nextInt(6, 8);
         int[] arr = new int[FIX_LEGTH];
@@ -216,11 +219,55 @@ public class Lesson3 {
         }
         System.out.println(Arrays.toString(arr));
 
-        int i = 0, j = 0;
+        int leftSum = 0;
+        int rightSum = 0;
 
+        for (int i = 0; i < arr.length; i++) {
+            rightSum = rightSum + arr[i];
+        }
+        System.out.println(rightSum);
 
+        for (int i = 0; i < arr.length; i++) {
+            leftSum = leftSum + arr[i];
+            rightSum = rightSum - arr[i];
 
+            if (leftSum == rightSum) {
+                System.out.println("Ура - есть симетричные суммы ячеек массива !");
+                break;
+            }
+        }
+        System.out.println(leftSum + " -- " + rightSum);
+        System.out.println();
+    }
+
+    private static boolean checkBalanceTrue(int[] arr) {
+        int leftsum = 0;
+        int rightsum = 0;
+
+        for (int i = 0; i < arr.length; i++) {
+            rightsum = rightsum + arr[i];
+        }
+        int rightSumEnd = rightsum;
+
+        for (int i = 0; i < arr.length; i++) {
+            leftsum = leftsum + arr[i];
+            rightsum = rightsum - arr[i];
+
+            if (leftsum == rightsum) {
+                System.out.println(Arrays.toString(arr));
+                System.out.println("Сумма массива: " + rightSumEnd);
+                System.out.println("Ура, есть баланс в суммах ячеек: " + leftsum + " и " + rightsum);
+                System.out.println();
+                return true;
+            }
+        }
+        System.out.println(Arrays.toString(arr));
+        System.out.println("Сумма массива: " + rightSumEnd);
+        System.out.println("Нет баланса ячеек !");
+        System.out.println();
+        return false;
 
     }
+
 
 }
