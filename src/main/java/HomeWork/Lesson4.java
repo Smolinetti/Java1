@@ -18,20 +18,42 @@ public class Lesson4 {
     private static final String SPACE_MAP = " ";
 
     public static void main(String[] args) {
+        turnGame();
+    }
+
+    private static void turnGame() {
+        initMap();
+        printMap();
+    }
+
+    private static void initMap() {
         for (int i = 0; i < SIZE; i++) {
             for (int j = 0; j < SIZE; j++) {
                 MAP[i][j] = DOT_EMPTY;
             }
         }
+    }
 
+    private static void printMap() {
+        printHeaderMap();
+        prinBodyMap();
+    }
+
+    private static void printHeaderMap() {
         System.out.print(HEADER_FIRST_SYMBOL + SPACE_MAP);
         for (int i = 0; i < SIZE; i++) {
-            System.out.print(i + 1 + SPACE_MAP);
+            printMapNumber(i);
         }
         System.out.println();
+    }
 
+    private static void printMapNumber(int i) {
+        System.out.print(i + 1 + SPACE_MAP);
+    }
+
+    private static void prinBodyMap() {
         for (int i = 0; i < SIZE; i++) {
-            System.out.print(i + 1 + SPACE_MAP);
+            printMapNumber(i);
 
             for (int j = 0; j < SIZE; j++) {
                 System.out.print(MAP[i][j] + SPACE_MAP);
