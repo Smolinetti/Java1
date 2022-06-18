@@ -20,6 +20,7 @@ public class Lesson4 {
     public static void turnGame() {
         initMap();
         printMap();
+        playGame();
     }
 
     private static void initMap() {
@@ -58,6 +59,24 @@ public class Lesson4 {
             System.out.println();
 
         }
+    }
+
+    private static void playGame() {
+        while (true) {
+            //Ход человека
+            printMap();
+            if (false) {
+                break;
+            }
+
+            //Ход компьютера
+            printMap();
+            if (false) {
+                break;
+            }
+        }
+
+        //Перейти к следующему ходу
     }
 
 
