@@ -59,7 +59,6 @@ public class Lesson4 {
                 System.out.print(MAP[i][j] + SPACE_MAP);
             }
 
-
             System.out.println();
         }
     }
