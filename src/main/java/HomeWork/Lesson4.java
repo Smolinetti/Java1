@@ -17,11 +17,7 @@ public class Lesson4 {
     private static final String HEADER_FIRST_SYMBOL = "♥";
     private static final String SPACE_MAP = " ";
 
-    public static void main(String[] args) {
-        turnGame();
-    }
-
-    private static void turnGame() {
+    public static void turnGame() {
         initMap();
         printMap();
     }
