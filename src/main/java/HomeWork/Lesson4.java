@@ -29,6 +29,17 @@ public class Lesson4 {
             System.out.print(i + 1 + SPACE_MAP);
         }
         System.out.println();
+
+        for (int i = 0; i < SIZE; i++) {
+            System.out.print(i + 1 + SPACE_MAP);
+
+            for (int j = 0; j < SIZE; j++) {
+                System.out.print(MAP[i][j] + SPACE_MAP);
+            }
+
+
+            System.out.println();
+        }
     }
 
 
